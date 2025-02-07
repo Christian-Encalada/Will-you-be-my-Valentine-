@@ -27,6 +27,17 @@ function handleNoClick() {
 }
 
 function moveButton(button) {
+    intentos++;  // También contar cuando el mouse se acerca
+    
+    // Después de 16 intentos, hacer desaparecer el botón
+    if (intentos >= 16) {
+        button.style.display = 'none';
+        const yesButton = document.querySelector('.yes-button');
+        yesButton.style.fontSize = '3em';
+        yesButton.textContent = 'DALE CLICK AQUÍ YA 😡';
+        return;
+    }
+    
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     
@@ -41,6 +52,10 @@ function moveButton(button) {
     const yesButton = document.querySelector('.yes-button');
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
     yesButton.style.fontSize = `${currentSize * 1.2}px`; // Aumentamos 20% cada vez
+    
+    // También aumentamos el padding para que el botón sea más grande en general
+    const currentPadding = parseFloat(window.getComputedStyle(yesButton).padding);
+    yesButton.style.padding = `${currentPadding * 1.1}px ${currentPadding * 1.2}px`;
 }
 
 // Añadir evento para mover el botón cuando el mouse se acerca
