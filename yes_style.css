@@ -130,3 +130,18 @@ body {
         padding: 10px;
     }
 }
+
+.sticker-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.sticker-container img {
+    max-width: 15%; /* Reduce el tamaño */
+    max-height: 150px; /* Altura máxima para evitar que sea muy grande */
+    height: auto;
+}
+
