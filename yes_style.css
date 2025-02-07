@@ -97,3 +97,36 @@ body {
     75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
 }
+
+@media (max-width: 768px) {
+    .header_text {
+        font-size: 2em;
+        padding: 0 15px;
+    }
+
+    .gif_container {
+        padding: 0 15px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .back-button, .surprise-button {
+        font-size: 1em;
+        padding: 12px 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header_text {
+        font-size: 1.5em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}

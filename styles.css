@@ -7,56 +7,102 @@ body {
     background-color: #f9e3e3;
     font-family: 'Arial', sans-serif;
     flex-direction: column;
-  }
-  
-  .container {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
     text-align: center;
-  }
-  
-  h1 {
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
     font-size: 2.5em;
     color: #d32f2f;
-  }
-  
-  .buttons {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.buttons {
     margin-top: 20px;
-  }
-  
-  .yes-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #4caf50;
-    color: white;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.yes-button, .no-button {
+    font-size: 1.2em;
+    padding: 15px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
-  }
-  
-  .yes-button:hover {
+    white-space: nowrap;
+}
+
+.yes-button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.yes-button:hover {
     transform: scale(1.1);
     background-color: #45a049;
-  }
-  
-  .no-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
+}
+
+.no-button {
     background-color: #f44336;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .no-button:hover {
+}
+
+.no-button:hover {
     background-color: #da190b;
-  }
-  
-  .gif_container img {
-    max-width: 100%;
+}
+
+.gif_container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 15px;
+}
+
+.gif_container img {
+    width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-top: 20px;
-  }
+    max-width: 100%;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .yes-button, .no-button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gif_container {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
