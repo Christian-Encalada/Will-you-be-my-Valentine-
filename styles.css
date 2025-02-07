@@ -27,6 +27,7 @@ h1 {
 .buttons {
     margin-top: 20px;
     display: flex;
+    flex-direction: row;
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
@@ -37,7 +38,7 @@ h1 {
     font-size: 1.2em;
     padding: 15px 25px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
     white-space: nowrap;
@@ -82,14 +83,15 @@ h1 {
         font-size: 1.8em;
     }
 
-    .yes-button, .no-button {
-        font-size: 1em;
-        padding: 12px 20px;
-    }
-
     .buttons {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .yes-button, .no-button {
+        width: 100%;
+        font-size: 1em;
+        padding: 12px 0;
     }
 
     .gif_container {
