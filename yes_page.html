@@ -3,15 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knew you would say yes!</title>
+    <title>¡Sabía que dirías que sí!</title>
     <link rel="stylesheet" href="./yes_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="container">
-        <h1 class="header_text">Knew you would say yes!</h1>
+        <h1 class="header_text">¡Sabía que dirías que sí!</h1>
         <div class="gif_container">
             <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
         </div>
+        <div class="buttons-container">
+            <button class="back-button" onclick="window.location.href='index.html'">Volver al inicio ↩️</button>
+            <button class="surprise-button locked" onclick="showLockedMessage()">Sorpresa (bloqueada) 🔒</button>
+        </div>
     </div>
+    <script>
+        function showLockedMessage() {
+            Swal.fire({
+                title: '¡Sorpresa Bloqueada! 🔒',
+                text: 'La sorpresa se desbloquea el 14 de febrero 💝',
+                icon: 'info',
+                confirmButtonText: 'Aceptar',
+                background: '#fff5f5',
+                confirmButtonColor: '#ff69b4',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            document.body.appendChild(heart);
+            
+            heart.addEventListener('animationend', () => heart.remove());
+        }
+        
+        setInterval(createHeart, 300);
+    </script>
 </body>
 </html>
