@@ -9,6 +9,11 @@ body {
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
+    transition: background-color 0.5s;
+}
+
+body.clicked {
+    background-color: #ffcccb;
 }
 
 .container {
@@ -75,6 +80,23 @@ h1 {
     height: auto;
     border-radius: 10px;
     max-width: 100%;
+}
+
+.heart {
+    position: fixed;
+    font-size: 30px;
+    animation: floatHeart 3s ease-in-out forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
 }
 
 /* Media queries para dispositivos móviles */

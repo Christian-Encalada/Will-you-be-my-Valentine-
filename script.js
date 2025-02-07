@@ -66,3 +66,16 @@ document.querySelector('.no-button').addEventListener('mouseover', function(e) {
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.top = Math.random() * 100 + 'vh';
+    document.body.appendChild(heart);
+    
+    heart.addEventListener('animationend', () => heart.remove());
+}
+
+setInterval(createHeart, 500);
